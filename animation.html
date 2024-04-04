@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation in css</title>
+    <style>
+        .container{
+            width: 80vh;
+            height: 30vh;
+            border: 2px solid red;
+        }
+        .box{
+            width: 34px;
+            height: 45px;
+            border: 2px solid black;
+            background-color: blue;
+            color: aliceblue;
+          /*  animation-name: firstanimation;
+            animation-duration: 4s;
+            animation-timing-function: cubic-bezier(0, 0, 0, 0.96);
+           animation-iteration-count: 5;
+           animation-delay: 0.3s;
+           animation-direction: alternate-reverse;*/
+           animation: firstanimation 4s cubic-bezier(0, 0, 0, 0.96)  3s 5 backwards, ani-2 4s ease-in-out 2s 3;
+      
+        }
+        @keyframes firstanimation {
+            from{         
+                background-color: brown;
+            }
+            to{
+                transform: translate(500px) scale(2);
+                background-color: burlywood;
+            }
+        }
+        @keyframes ani-2{
+            0%{
+                transform: rotate(45deg);
+            }
+            25%{
+                transform: rotate(65deg);
+            }
+            50%{
+                transform: rotate(85deg);
+            }
+            75%{
+                transform: rotate(120deg);
+            }
+            100%{
+                transform: rotate(160deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            box
+        </div>
+    </div>
+</body>
+</html>
